@@ -6,9 +6,13 @@ export default function TopStories() {
 
   const {news} = useOutletContext()
 
-  const displayArticles = news.map(article => (
+  const test = (event) => {
+    console.log('index', event.target.id)
+  }
+
+  const displayArticles = news.map((article, index) => (
     <article>
-      <Link to={`/${article.title}`} className='top-article'>
+      <Link to={`/${index}`} className='top-article' onClick={test}>
       <div className='article-content'>
         <h2 className='title'>{article.title.split('-')[0]}</h2>
         <p className='description'>{article.description}</p>

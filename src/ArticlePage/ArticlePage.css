@@ -1,0 +1,36 @@
+.selected-article {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.selected-article h1 {
+  color: rgb(240, 9, 9);
+}
+
+.selected-article-image {
+  width: 500px;
+}
+
+.selected-article-image img {
+  width: 100%;
+}
+
+.selected-article h1 {
+  margin: 0;
+}
+
+.author {
+  margin: 0;
+  font-size: .75em;
+  color: darkgrey;
+}
+
+.description a {
+  color: blue;
+}
+
+.description a:hover {
+  text-decoration: underline;
+}

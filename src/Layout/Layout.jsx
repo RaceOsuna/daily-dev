@@ -13,7 +13,7 @@ function Layout({news}) {
       <header>
         <h1>Daily Dev</h1>
         <div className='header-links'>
-          <NavLink>Top Stories</NavLink>
+          <NavLink to='/'>Top Stories</NavLink>
           <NavLink>Sources</NavLink>
           <NavLink>All News</NavLink>
         </div>
