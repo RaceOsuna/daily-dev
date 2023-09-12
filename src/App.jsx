@@ -9,11 +9,11 @@ import ArticlePage from './ArticlePage/ArticlePage'
 function App() {
   
   const [news, setNews] = useState(data.articles)
-  const [sources, setSources] = useState(['no sources'])
+  const [sources, setSources] = useState(['All Sources'])
 
   useEffect(() =>{
     const sourceNames = news.map(article => article.source.name)
-    setSources(['Filter by Source', ...sourceNames])
+    setSources(['All Sources', ...sourceNames])
   }, [news])
 
   return (

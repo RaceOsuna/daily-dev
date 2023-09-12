@@ -7,10 +7,10 @@ import './Layout.css'
 
 function Layout({news, setNews, sources}) {
 
-  const [sourceValue, setSourceValue] = useState('Filter by Source')
+  const [sourceValue, setSourceValue] = useState('All Sources')
   const sourcesOptions = sources.map(source => <option value={source}>{source}</option>)
 
-  const displayNews = sourceValue !== 'Filter by Source' ? news.filter(article => article.source.name === sourceValue) : news
+  const displayNews = sourceValue !== 'All Sources' ? news.filter(article => article.source.name === sourceValue) : news
 
   const filterBySource = (event) => {
     setSourceValue(event.target.value)
@@ -21,8 +21,8 @@ function Layout({news, setNews, sources}) {
       <header>
         <h1>Daily Dev</h1>
         <div className='header-links'>
-          <NavLink to='/'>Top Stories</NavLink>
-          <select onChange={filterBySource}>
+          <NavLink to='/' onClick={() => setSourceValue('All Sources')}>Top Stories</NavLink>
+          <select value={sourceValue} onChange={filterBySource}>
             {sourcesOptions}
           </select>
         </div>
