@@ -1,11 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@700&family=Permanent+Marker&family=Poppins:wght@300&family=Source+Code+Pro&display=swap');
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+header h1 {
+  font-size: 60px;
+  margin: 20px 0;
+  font-family: Permanent Marker;
+}
+
 a {
-  margin: 0 10px;
+  margin: 0 20px;
   text-decoration: none;
   color: black;
   cursor: pointer;
