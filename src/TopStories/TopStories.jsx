@@ -4,13 +4,13 @@ import './TopStories.css'
 
 export default function TopStories() {
 
-  const {news} = useOutletContext()
+  const {displayNews} = useOutletContext()
 
   const test = (event) => {
     console.log('index', event.target.id)
   }
 
-  const displayArticles = news.map((article, index) => (
+  const displayArticles = displayNews.map((article, index) => (
     <article>
       <Link to={`/${index}`} className='top-article' onClick={test}>
       <div className='article-content'>

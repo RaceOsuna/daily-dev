@@ -1,12 +1,20 @@
 import React from 'react'
 import { Outlet, NavLink} from 'react-router-dom'
-// import { useState } from 'react'
+import { useState } from 'react'
 import './Layout.css'
 // import { data } from '../mockData'
 
 
-function Layout({news}) {
+function Layout({news, setNews, sources}) {
 
+  const [sourceValue, setSourceValue] = useState('Filter by Source')
+  const sourcesOptions = sources.map(source => <option value={source}>{source}</option>)
+
+  const displayNews = sourceValue !== 'Filter by Source' ? news.filter(article => article.source.name === sourceValue) : news
+
+  const filterBySource = (event) => {
+    setSourceValue(event.target.value)
+  }
 
   return (
     <div>
@@ -14,12 +22,13 @@ function Layout({news}) {
         <h1>Daily Dev</h1>
         <div className='header-links'>
           <NavLink to='/'>Top Stories</NavLink>
-          <NavLink>Sources</NavLink>
-          <NavLink>All News</NavLink>
+          <select onChange={filterBySource}>
+            {sourcesOptions}
+          </select>
         </div>
       </header>
       <main>
-        <Outlet context={{news}} />
+        <Outlet context={{displayNews}} />
       </main>
     </div>
   )

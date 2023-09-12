@@ -5,9 +5,9 @@ import { useState } from 'react'
 
 export default function ArticlePage() {
 
-  const { news } = useOutletContext()
+  const { displayNews } = useOutletContext()
   const { articleIndex } = useParams()
-  const article = news[articleIndex]
+  const article = displayNews[articleIndex]
   console.log(article.content)
   const displayArticle =
     <article className="selected-article">
