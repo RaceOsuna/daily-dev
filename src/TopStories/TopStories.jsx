@@ -6,13 +6,18 @@ export default function TopStories() {
 
   const {displayNews} = useOutletContext()
 
-  const test = (event) => {
-    console.log('index', event.target.id)
+  const testArticle = (article) => {
+    if (article.content !== null && article.content !== '[Removed]') {
+      return true
+    } else {
+      return false
+    }
   }
 
   const displayArticles = displayNews.map((article, index) => (
+    testArticle(article) === true ?
     <article key={article.title}>
-      <Link to={`/${index}`} className='top-article' onClick={test}>
+      <Link to={`/${index}`} className='top-article'>
       <div className='article-content'>
         <h2 className='title'>{article.title.split('-')[0]}</h2>
         <p className='description'>{article.description}</p>
@@ -22,7 +27,7 @@ export default function TopStories() {
         <img src={article.urlToImage} />
       </div>
       </Link>
-    </article>
+    </article> : null
   ))
 
   return (
