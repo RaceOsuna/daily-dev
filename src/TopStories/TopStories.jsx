@@ -11,7 +11,7 @@ export default function TopStories() {
   }
 
   const displayArticles = displayNews.map((article, index) => (
-    <article>
+    <article key={article.title}>
       <Link to={`/${index}`} className='top-article' onClick={test}>
       <div className='article-content'>
         <h2 className='title'>{article.title.split('-')[0]}</h2>

@@ -8,7 +8,7 @@ import './Layout.css'
 function Layout({news, setNews, sources}) {
 
   const [sourceValue, setSourceValue] = useState('All Sources')
-  const sourcesOptions = sources.map(source => <option value={source}>{source}</option>)
+  const sourcesOptions = sources.map((source, index) => <option key={index} value={source}>{source}</option>)
 
   const displayNews = sourceValue !== 'All Sources' ? news.filter(article => article.source.name === sourceValue) : news
 

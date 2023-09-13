@@ -10,7 +10,7 @@ export default function ArticlePage() {
   const article = displayNews[articleIndex]
   console.log(article.content)
   const displayArticle =
-    <article className="selected-article">
+    <article className="selected-article" key={article.name}>
       <div className='article-content'>
         <h1>{article.source.name}</h1>
         <p className='author'>{article.author}</p>
