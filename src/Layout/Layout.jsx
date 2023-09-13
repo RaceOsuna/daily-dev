@@ -7,6 +7,7 @@ import './Layout.css'
 
 function Layout({news, setNews, sources, setSources}) {
 
+  const [showSources, setShowSources] = useState(true)
   const [sourceValue, setSourceValue] = useState('All Sources')
   const sourcesOptions = sources.map((source, index) => <option key={index} value={source}>{source}</option>)
 
@@ -16,20 +17,25 @@ function Layout({news, setNews, sources, setSources}) {
     setSourceValue(event.target.value)
   }
 
+  const returnHome = () => {
+    setSourceValue('All Sources')
+    setShowSources(true)
+  }
+
   return (
     <div>
       <header>
         <h1>Daily Dev</h1>
         <div className='header-links'>
-          <NavLink to='/' className={({isActive}) => isActive ? 'active' : 'a'} onClick={() => setSourceValue('All Sources')}>Home</NavLink>
-          <select value={sourceValue} onChange={filterBySource}>
+          <NavLink to='/' className={({isActive}) => isActive ? 'active' : 'a'} onClick={returnHome}>Home</NavLink>
+          {showSources && <select value={sourceValue} onChange={filterBySource}>
             {sourcesOptions}
-          </select>
-          <button onClick={() => setSourceValue('All Sources')}>clear</button>
+          </select>}
+          {showSources && <button onClick={() => setSourceValue('All Sources')}>clear</button>}
         </div>
       </header>
       <main>
-        <Outlet context={{displayNews, setSources}} />
+        <Outlet context={{displayNews, setSources, setShowSources}} />
       </main>
     </div>
   )

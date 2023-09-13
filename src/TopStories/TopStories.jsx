@@ -4,7 +4,7 @@ import './TopStories.css'
 
 export default function TopStories() {
 
-  const {displayNews, setSources} = useOutletContext()
+  const {displayNews, setSources, setShowSources} = useOutletContext()
   const [searchValue, setSearchValue] = useState('')
   
   const news = searchValue ? displayNews.filter(article => (
@@ -29,7 +29,7 @@ export default function TopStories() {
   const displayArticles = news.map((article, index) => (
     testArticle(article) === true ?
     <article key={article.title}>
-      <Link to={`/${index}`} className='top-article'>
+      <Link to={`/${index}`} className='top-article' onClick={() => setShowSources(false)} >
       <div className='article-content'>
         <h2 className='title'>{article.title.split('-')[0]}</h2>
         <p className='description'>{article.description}</p>
