@@ -2,7 +2,8 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 100px;
+  padding-top: 100px;
+  border-top: 1px solid black;
 }
 
 .selected-article-content {

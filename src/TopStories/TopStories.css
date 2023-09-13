@@ -49,6 +49,9 @@ article a:hover {
   display: flex;
   justify-content: center;
   width: 100%;
+  border-bottom: 1px solid black;
+  padding-bottom: 20px;
+  margin-top: -40px;
 }
 
 .search input {
@@ -62,5 +65,14 @@ article a:hover {
 
     .article-content {
       width: 100%;
+    }
+
+    .search {
+      margin-top: 0;
+    }
+
+    h4 {
+      width: 100%;
+      text-align: center;
     }
 }
