@@ -1,9 +1,6 @@
 .top-stories {
-  /* display: inline-block;
-  flex-wrap: wrap; */
   min-width: 100%;
   display: flex;
-  /* justify-content: space-between; */
   flex-wrap: wrap;
   margin: 0 auto
 }
@@ -14,9 +11,7 @@ article {
 
 .top-article {
   display: flex;
-  /* flex-direction: column; */
   justify-content: space-between;
-  /* width: 100%; */
   margin: 30px 15px;
   padding-bottom: 20px;
   border-bottom: 1px solid rgb(101, 100, 100);
@@ -48,4 +43,14 @@ article {
 
 article a:hover {
   text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+    .top-article {
+      flex-direction: column;
+    }
+
+    .article-content {
+      width: 100%;
+    }
 }

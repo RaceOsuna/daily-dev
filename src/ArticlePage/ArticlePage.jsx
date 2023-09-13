@@ -7,11 +7,12 @@ export default function ArticlePage() {
 
   const { displayNews } = useOutletContext()
   const { articleIndex } = useParams()
+
   const article = displayNews[articleIndex]
-  console.log(article.content)
+
   const displayArticle =
     <article className="selected-article" key={article.name}>
-      <div className='article-content'>
+      <div className='selected-article-content'>
         <h1>{article.source.name}</h1>
         <p className='author'>{article.author}</p>
         <h2 className='title'>{article.title.split('-')[0]}</h2>

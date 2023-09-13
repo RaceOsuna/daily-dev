@@ -5,12 +5,18 @@
   margin-top: 100px;
 }
 
+.selected-article-content {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
 .selected-article h1 {
   color: rgb(240, 9, 9);
 }
 
 .selected-article-image {
-  width: 500px;
+  width: 400px;
 }
 
 .selected-article-image img {
@@ -33,4 +39,19 @@
 
 .description a:hover {
   text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  .selected-article {
+    flex-direction: column;
+    /* width: fit-content; */
+  }
+
+  .selected-article-content {
+    width: 100%;
+  }
+
+  .selected-article-image {
+    width: 100%;
+  }
 }
