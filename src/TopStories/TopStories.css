@@ -45,6 +45,16 @@ article a:hover {
   text-decoration: none;
 }
 
+/* .search {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.search input {
+  width: 200px;
+} */
+
 @media screen and (max-width: 768px) {
     .top-article {
       flex-direction: column;

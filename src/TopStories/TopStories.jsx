@@ -33,6 +33,9 @@ export default function TopStories() {
   return (
     <section className='top-stories'>
       <h4 style={{color: 'red'}}>Today's Top News</h4>
+      {/* <div className='search'>
+        <input type="text" />
+      </div> */}
       {displayArticles}
     </section>
   )

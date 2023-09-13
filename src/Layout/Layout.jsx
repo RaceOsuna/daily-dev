@@ -21,10 +21,11 @@ function Layout({news, setNews, sources}) {
       <header>
         <h1>Daily Dev</h1>
         <div className='header-links'>
-          <NavLink to='/' onClick={() => setSourceValue('All Sources')}>Top Stories</NavLink>
+          <NavLink to='/' className={({isActive}) => isActive ? 'active' : 'a'} onClick={() => setSourceValue('All Sources')}>Home</NavLink>
           <select value={sourceValue} onChange={filterBySource}>
             {sourcesOptions}
           </select>
+          <button onClick={() => setSourceValue('All Sources')}>clear</button>
         </div>
       </header>
       <main>
