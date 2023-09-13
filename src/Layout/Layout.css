@@ -24,8 +24,10 @@ a {
 }
 
 a.active {
-  text-decoration: underline;
+  /* text-decoration: underline; */
   color: green;
+  border: 1px solid green;
+  padding: 2px;
 }
 
 a:hover {

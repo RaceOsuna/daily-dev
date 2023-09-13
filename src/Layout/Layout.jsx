@@ -27,7 +27,7 @@ function Layout({news, setNews, sources, setSources}) {
       <header>
         <h1>Daily Dev</h1>
         <div className='header-links'>
-          <NavLink to='/' className={({isActive}) => isActive ? 'active' : 'a'} onClick={returnHome}>Home</NavLink>
+          {!showSources && <NavLink to='/' className={({isActive}) => isActive ? 'active' : 'a'} onClick={returnHome}>Home</NavLink>}
           {showSources && <select value={sourceValue} onChange={filterBySource}>
             {sourcesOptions}
           </select>}
