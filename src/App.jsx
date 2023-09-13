@@ -33,7 +33,7 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Layout news={news} setNews={setNews} sources={sources} />}>
+        <Route path="/" element={<Layout news={news} setNews={setNews} sources={sources} setSources={setSources}/>}>
           <Route index element={<TopStories />} />
           <Route path=':articleIndex' element={<ArticlePage />} />
         </Route>

@@ -5,7 +5,7 @@ import './Layout.css'
 // import { data } from '../mockData'
 
 
-function Layout({news, setNews, sources}) {
+function Layout({news, setNews, sources, setSources}) {
 
   const [sourceValue, setSourceValue] = useState('All Sources')
   const sourcesOptions = sources.map((source, index) => <option key={index} value={source}>{source}</option>)
@@ -29,7 +29,7 @@ function Layout({news, setNews, sources}) {
         </div>
       </header>
       <main>
-        <Outlet context={{displayNews}} />
+        <Outlet context={{displayNews, setSources}} />
       </main>
     </div>
   )

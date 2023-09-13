@@ -4,12 +4,19 @@ import './TopStories.css'
 
 export default function TopStories() {
 
-  const {displayNews} = useOutletContext()
+  const {displayNews, setSources} = useOutletContext()
   const [searchValue, setSearchValue] = useState('')
   
   const news = searchValue ? displayNews.filter(article => (
     article.title.toLowerCase().includes(searchValue.toLowerCase()) || article.description.toLowerCase().includes(searchValue.toLowerCase())
   )) : displayNews
+
+  const filteredSources = news.map(article => article.source.name)
+
+  const filterByKeyWord = (event) =>  {
+    setSearchValue(event.target.value)
+    setSources(['All Sources', ...filteredSources])
+  }
 
   const testArticle = (article) => {
     if (article.content !== null && article.content !== '[Removed]') {
@@ -39,7 +46,7 @@ export default function TopStories() {
     <section className='top-stories'>
       <h4 style={{color: 'red'}}>Today's Top News</h4>
       <div className='search'>
-        <input value={searchValue} type="text" placeholder='search keywords' onChange={(event) => setSearchValue(event.target.value)} />
+        <input value={searchValue} type="text" placeholder='search keywords' onChange={filterByKeyWord} />
       </div>
       {displayArticles}
     </section>
