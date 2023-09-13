@@ -1,10 +1,15 @@
-import React from 'react'
+import { useState } from 'react'
 import { useOutletContext, Link } from 'react-router-dom'
 import './TopStories.css'
 
 export default function TopStories() {
 
   const {displayNews} = useOutletContext()
+  const [searchValue, setSearchValue] = useState('')
+  
+  const news = searchValue ? displayNews.filter(article => (
+    article.title.toLowerCase().includes(searchValue.toLowerCase()) || article.description.toLowerCase().includes(searchValue.toLowerCase())
+  )) : displayNews
 
   const testArticle = (article) => {
     if (article.content !== null && article.content !== '[Removed]') {
@@ -14,7 +19,7 @@ export default function TopStories() {
     }
   }
 
-  const displayArticles = displayNews.map((article, index) => (
+  const displayArticles = news.map((article, index) => (
     testArticle(article) === true ?
     <article key={article.title}>
       <Link to={`/${index}`} className='top-article'>
@@ -33,9 +38,9 @@ export default function TopStories() {
   return (
     <section className='top-stories'>
       <h4 style={{color: 'red'}}>Today's Top News</h4>
-      {/* <div className='search'>
-        <input type="text" />
-      </div> */}
+      <div className='search'>
+        <input value={searchValue} type="text" placeholder='search keywords' onChange={(event) => setSearchValue(event.target.value)} />
+      </div>
       {displayArticles}
     </section>
   )
