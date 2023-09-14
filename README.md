@@ -6,7 +6,7 @@ The only application you need for the latest up-to-date news in the US. You can 
 
 <p><a href="https://www.linkedin.com/in/race-osuna-17a827267/">Race Osuna</a>
 
-## install
+## Install
 
 - clone down this repo to your local machine 
 - cd into the repository
@@ -19,3 +19,14 @@ The only application you need for the latest up-to-date news in the US. You can 
 - React Router
 - React Hooks
 - CSS
+
+## Functionality
+
+- Display a list of articles (headline, image, description if present, date)
+- Display a “detailed” view for each article (headline, image, date, content, source)
+- Filter and search articles
+
+## Future Add Ons
+
+- Display news for other countries
+- Diplay all past article for keyword searches (not just recent top stories)
