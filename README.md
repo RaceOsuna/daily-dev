@@ -2,6 +2,12 @@
 
 The only application you need for the latest up-to-date news in the US. You can browse articles by key words or event filter from your favorite news sources. Download today!
 
+![Screenshot 2023-09-14 at 10 00 07 AM](https://github.com/RaceOsuna/daily-dev/assets/119973475/1c31b5bf-0711-4165-8288-c3b7ba8dcbae)
+
+![Screenshot 2023-09-14 at 10 00 33 AM](https://github.com/RaceOsuna/daily-dev/assets/119973475/3ed07781-fc35-4cd7-92a8-d461165da0d4)
+
+
+
 ## contributors
 
 <p><a href="https://www.linkedin.com/in/race-osuna-17a827267/">Race Osuna</a>
