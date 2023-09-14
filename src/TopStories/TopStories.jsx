@@ -8,7 +8,7 @@ export default function TopStories() {
   const [searchValue, setSearchValue] = useState('')
   
   const news = searchValue ? displayNews.filter(article => (
-    article.title.toLowerCase().includes(searchValue.toLowerCase()) || article.description.toLowerCase().includes(searchValue.toLowerCase())
+    article.title?.toLowerCase().includes(searchValue.toLowerCase()) || article.description?.toLowerCase().includes(searchValue.toLowerCase())
   )) : displayNews
 
   const filteredSources = news.map(article => article.source.name)
